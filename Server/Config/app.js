@@ -40,7 +40,7 @@ const contacts_1 = __importDefault(require("../Routes/contacts"));
 const app = express_1.default();
 exports.default = app;
 const DBConfig = __importStar(require("./db"));
-mongoose_1.default.connect(DBConfig.LocalURI, {
+mongoose_1.default.connect(DBConfig.RemoteURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });

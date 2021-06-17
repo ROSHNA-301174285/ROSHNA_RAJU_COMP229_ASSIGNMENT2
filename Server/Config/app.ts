@@ -29,7 +29,7 @@ export default app; // exports app as default object for this module
 
 //DB configuration
 import * as DBConfig from "./db";
-mongoose.connect(DBConfig.LocalURI, {
+mongoose.connect(DBConfig.RemoteURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
