@@ -6,19 +6,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProcessDeletePage = exports.ProcessAddPage = exports.ProcessEditPage = exports.DisplayAddPage = exports.DisplayEditPage = exports.DisplayListPage = void 0;
 const contacts_1 = __importDefault(require("../Models/contacts"));
 const Util_1 = require("../Util");
+var mySort = { contactName: 1 };
 function DisplayListPage(req, res, next) {
     contacts_1.default.find(function (err, contactsCollection) {
         if (err) {
             return console.error(err);
         }
-        console.log(contactsCollection);
         res.render("index", {
             title: "Business Contacts List",
             page: "business-contacts-list",
             contacts: contactsCollection,
             displayName: Util_1.UserDisplayName,
         });
-    });
+    }).sort(mySort);
 }
 exports.DisplayListPage = DisplayListPage;
 function DisplayEditPage(req, res, next) {

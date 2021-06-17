@@ -1,14 +1,9 @@
-<!--
-File Name: business-contacts-list.ejs
-Student Name: Roshna Raju
-Student Id: 301174285
-Date: 17/06/2021 -->
 <div class="container">
     <h1>Business Contacts List</h1>
 
     <div class="row">
         <div class="col">
-            <% if(displayName) { %>
+            <% if(null!=displayName && "" !=displayName) { %>
                 <a href="/business-contacts-list/add" id="addButton" class="btn btn-primary mb-1"><i
                         class="fas fa-plus-circle"></i> Add Business Contact</a>
                 <% } %>

@@ -1,10 +1,3 @@
-/*
-File Name: contacts.ts
-Student Name: Roshna Raju
-Student Id: 301174285
-Date: 17/06/20214
-*/
-
 import express, { Request, Response, NextFunction } from "express";
 
 // import model in order to use database

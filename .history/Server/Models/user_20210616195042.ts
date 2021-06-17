@@ -1,10 +1,3 @@
-/*
-File Name: user.ts
-Student Name: Roshna Raju
-Student Id: 301174285
-Date: 17/06/20214
-*/
-
 import mongoose, { PassportLocalSchema } from "mongoose";
 const Schema = mongoose.Schema; // alias for mongoose schema
 import passportLocalMongoose from "passport-local-mongoose";

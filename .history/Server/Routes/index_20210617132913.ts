@@ -15,7 +15,9 @@ import {
   DisplayHomePage,
   DisplayLoginPage,
   ProcessLogoutPage,
+  DisplayRegisterPage,
   ProcessLoginPage,
+  ProcessRegisterPage,
   DisplayAboutPage,
   DisplayProjectsPage,
   DisplayServicesPage,
@@ -44,6 +46,12 @@ router.get("/login", DisplayLoginPage);
 
 /* POST Login page. - process login */
 router.post("/login", ProcessLoginPage);
+
+/* GET Register page. */
+router.get("/register", DisplayRegisterPage);
+
+/* POST Register page. */
+router.post("/register", ProcessRegisterPage);
 
 /* GET Logout page. */
 router.get("/logout", ProcessLogoutPage);

@@ -1,10 +1,3 @@
-/*
-File Name: index.ts
-Student Name: Roshna Raju
-Student Id: 301174285
-Date: 17/06/20214
-*/
-
 import express, { Request, Response, NextFunction } from "express";
 import passport from "passport";
 import User from "../Models/user";
@@ -121,6 +114,53 @@ export function ProcessLoginPage(
       }
     );
   })(req, res, next);
+}
+
+export function DisplayRegisterPage(
+  req: Request,
+  res: Response,
+  next: NextFunction
+): void {
+  if (!req.user) {
+    return res.render("index", {
+      title: "Register",
+      page: "register",
+      messages: req.flash("registerMessage"),
+      displayName: UserDisplayName(req),
+    });
+  }
+
+  return res.redirect("/business-contacts-list");
+}
+
+export function ProcessRegisterPage(
+  req: Request,
+  res: Response,
+  next: NextFunction
+): void {
+  // instantiate a new User Object
+  let newUser = new User({
+    username: req.body.username,
+    emailAddress: req.body.emailAddress,
+    displayName: req.body.FirstName + " " + req.body.LastName,
+  });
+
+  User.register(newUser, req.body.password, (err) => {
+    if (err) {
+      console.error("Error: Inserting New User");
+      if (err.name == "UserExistsError") {
+        console.error("Error: User Already Exists");
+      }
+      req.flash("registerMessage", "Registration Error");
+
+      return res.redirect("/register");
+    }
+
+    // after successful registration - login the user
+    return passport.authenticate("local")(req, res, () => {
+      return res.redirect("/business-contacts-list");
+    });
+  });
 }
 
 export function ProcessLogoutPage(

@@ -1,10 +1,3 @@
-/*
-File Name: contacts.ts
-Student Name: Roshna Raju
-Student Id: 301174285
-Date: 17/06/20214
-*/
-
 import express from "express";
 const router = express.Router();
 export default router;

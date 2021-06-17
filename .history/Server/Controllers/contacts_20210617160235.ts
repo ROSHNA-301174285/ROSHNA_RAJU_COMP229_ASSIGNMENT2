@@ -1,10 +1,3 @@
-/*
-File Name: contacts.ts
-Student Name: Roshna Raju
-Student Id: 301174285
-Date: 17/06/20214
-*/
-
 import express, { Request, Response, NextFunction } from "express";
 
 // import model in order to use database
@@ -12,7 +5,7 @@ import Contacts from "../Models/contacts";
 
 // import Util Functions
 import { UserDisplayName } from "../Util";
-var mySort = { contactName: 1 };
+
 export function DisplayListPage(
   req: Request,
   res: Response,
@@ -26,10 +19,10 @@ export function DisplayListPage(
     res.render("index", {
       title: "Business Contacts List",
       page: "business-contacts-list",
-      contacts: contactsCollection,
+      contacts: contactsCollection.sort({ contactName }),
       displayName: UserDisplayName,
     });
-  }).sort(mySort);
+  });
 }
 
 export function DisplayEditPage(
