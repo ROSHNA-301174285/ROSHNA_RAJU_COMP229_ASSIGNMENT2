@@ -1,0 +1,71 @@
+<!--
+File Name: home.ejs
+Student Name: Roshna Raju
+Student Id: 301174285
+Date: 03/06/2021
+-->
+
+<div class="container">
+   <h1> Contact Details </h1>
+   <p> <i class="fas fa-female"></i> Name : Roshna Rose Raju</p>
+   <p> <i class="fas fa-map-marker-alt"></i> Location : Ajax, Toronto </p>
+   <p> <i class="fas fa-phone"></i> Phone : +1-416-414-6967</p>
+   <p> <i class="fas fa-envelope"></i> Email : roshnaroseraju@gmail.com</p>
+   <form>
+      <h3>Please provide your details in-order to contact you.</h3>
+
+      <div class="container">
+         <div class="row">
+            <div class="column">
+               <label for="inputName1" class="form-label">First Name</label>
+            </div>
+            <div class="column">
+               <input type="text" class="form-control" id="inputName1" aria-describedby="inputName1">
+            </div>
+         </div>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="column">
+               <label for="inputName2" class="form-label">Last Name</label>
+            </div>
+            <div class="column">
+               <input type="text" class="form-control" id="inputName2" aria-describedby="inputName2">
+            </div>
+         </div>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="column">
+               <label for="contactNumber" class="form-label">Contact Number</label>
+            </div>
+            <div class="column">
+               <input type="text" class="form-control" id="contactNumber" aria-describedby="contactNumber">
+            </div>
+         </div>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="column">
+               <label for="inputEmail" class="form-label">Email Address</label>
+            </div>
+            <div class="column">
+               <input type="email" class="form-control" id="inputEmail" aria-describedby="inputEmail">
+            </div>
+         </div>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="column">
+               <label for="inputMessage" class="form-label">Message</label>
+            </div>
+            <div class="column">
+               <textarea type="text" class="form-control" id="inputMessage" rows="2"></textarea>
+            </div>
+         </div>
+      </div>
+   </form>
+   <form method="get" action="/home">
+      <button type="submit" class="btn btn-primary" style="background-color:#000000">Submit</button>
+   </form>
+</div>

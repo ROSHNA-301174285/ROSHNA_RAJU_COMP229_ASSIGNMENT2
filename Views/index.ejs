@@ -1,0 +1,24 @@
+<!--
+File Name: index.ejs
+Student Name: Roshna Raju
+Student Id: 301174285
+Date: 01/06/2021
+-->
+
+<%- include('./components/header.ejs'); %>
+  <!-- Navigation Section -->
+  <header>
+    <%- include('./components/nav.ejs'); %>
+  </header>
+
+  <!-- Main Content-->
+  <main>
+    <%- include('./content/' + page + '.ejs' ); %>
+  </main>
+
+  <!--Bottom Nav-->
+  <footer>
+    <%- include('./components/footer.ejs'); %>
+  </footer>
+  <!-- Javascript Section-->
+  <%- include('./components/bottom.ejs'); %>
