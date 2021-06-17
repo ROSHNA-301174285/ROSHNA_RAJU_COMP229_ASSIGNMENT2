@@ -9,29 +9,50 @@ import express from "express";
 const router = express.Router();
 export default router;
 
+// create an index controller instance
+import {
+  DisplayContactPage,
+  DisplayHomePage,
+  DisplayLoginPage,
+  ProcessLogoutPage,
+  DisplayRegisterPage,
+  ProcessLoginPage,
+  ProcessRegisterPage,
+  DisplayAboutPage,
+  DisplayProjectsPage,
+  DisplayServicesPage,
+} from "../Controllers/index";
+
+// import Util functions
+import { UserDisplayName } from "../Util";
+
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "Home", page: "home" });
-});
+router.get("/", DisplayHomePage);
+
 /* GET home page. */
-router.get("/home", function (req, res, next) {
-  res.render("index", { title: "Home", page: "home" });
-});
+router.get("/home", DisplayHomePage);
 /* GET About page. */
-router.get("/about", function (req, res, next) {
-  res.render("index", { title: "About Me", page: "about" });
-});
+router.get("/about", DisplayAboutPage);
 /* GET Projects page. */
-router.get("/projects", function (req, res, next) {
-  res.render("index", { title: "Projects", page: "projects" });
-});
+router.get("/projects", DisplayProjectsPage);
 /* GET Services page. */
-router.get("/services", function (req, res, next) {
-  res.render("index", { title: "Services", page: "services" });
-});
+router.get("/services", DisplayServicesPage);
 
 /* GET Contact page. */
-router.get("/contact", function (req, res, next) {
-  res.render("index", { title: "Contact Me", page: "contact" });
-});
+router.get("/contact", DisplayContactPage);
+
+/* GET Login page. */
+router.get("/login", DisplayLoginPage);
+
+/* POST Login page. - process login */
+router.post("/login", ProcessLoginPage);
+
+/* GET Register page. */
+router.get("/register", DisplayRegisterPage);
+
+/* POST Register page. */
+router.post("/register", ProcessRegisterPage);
+
+/* GET Logout page. */
+router.get("/logout", ProcessLogoutPage);
 //module.exports = router;
